@@ -1,0 +1,34 @@
+:root {
+    --azul-oscuro: #0a192f;
+    --azul-medio: #1a365d;
+    --verde-brillante: #48bb78;
+    --dorado: #ecc94b;
+    --blanco: #ffffff;
+    --rojo: #e53e3e;
+}
+
+body { font-family: 'Segoe UI', sans-serif; background-color: var(--azul-oscuro); color: var(--blanco); margin: 0; }
+.header { background: rgba(0, 0, 0, 0.5); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--dorado); }
+.logo-container img { height: 70px; }
+.btn-primary { background: var(--verde-brillante); color: white; border: none; padding: 12px 30px; font-weight: bold; border-radius: 5px; cursor: pointer; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.dashboard-container { display: flex; justify-content: center; gap: 30px; padding: 20px; flex-wrap: wrap; }
+#canvas-container { position: relative; }
+#canvas { border: 10px solid #2d3748; border-radius: 50%; background: white; transition: transform 8s cubic-bezier(0.15, 0, 0.15, 1); }
+#pointer { position: absolute; top: 50%; right: -10px; transform: translateY(-50%); border-top: 20px solid transparent; border-bottom: 20px solid transparent; border-right: 30px solid var(--dorado); z-index: 10; }
+
+.side-panel { width: 320px; display: flex; flex-direction: column; gap: 15px; }
+.manual-container, .history-container { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 8px; border: 1px solid var(--azul-medio); }
+#lista-historial { list-style: none; padding: 0; max-height: 250px; overflow-y: auto; }
+#lista-historial li { background: var(--azul-medio); padding: 8px; margin-bottom: 5px; border-radius: 4px; display: flex; justify-content: space-between; }
+
+/* ESTILOS DE GRUPOS */
+.fixture-grid { display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; justify-content: center; }
+.grupo-box { background: var(--azul-medio); border: 2px solid var(--dorado); border-radius: 8px; width: 260px; padding: 15px; }
+.grupo-box h4 { margin: 0 0 10px 0; text-align: center; color: var(--dorado); border-bottom: 1px solid rgba(236,201,75,0.2); }
+.jugador-slot { background: rgba(0,0,0,0.2); margin: 5px 0; padding: 8px; border-radius: 4px; font-size: 0.9rem; }
+.jugador-slot span { color: var(--verde-brillante); font-weight: bold; float: right; }
+
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 100; }
+.modal-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; color: #1a202c; padding: 40px; border-radius: 10px; text-align: center; }

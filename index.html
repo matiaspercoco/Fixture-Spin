@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador - Circuito Latinoamericano</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="image.png" alt="Logo" id="app-logo">
+        </div>
+        <div class="control-group">
+            <label>1. Planilla Excel:</label>
+            <input type="file" id="excel-input" accept=".xlsx, .xls">
+        </div>
+        <div class="control-group">
+            <label>2. División:</label>
+            <select id="division-selector">
+                <option value="">Cargue un archivo...</option>
+            </select>
+        </div>
+        <button id="spin-btn" class="btn-primary" disabled>¡GIRAR!</button>
+    </header>
+
+    <main class="main-content">
+        <div class="dashboard-container">
+            <div id="canvas-container">
+                <div id="pointer"></div>
+                <canvas id="canvas" width="500" height="500"></canvas>
+            </div>
+            <div class="side-panel">
+                <div class="manual-container">
+                    <h3>Agregar Participante</h3>
+                    <div class="manual-entry">
+                        <input type="text" id="manual-name" placeholder="Nombre...">
+                        <button id="add-manual-btn" class="btn-add">+</button>
+                    </div>
+                </div>
+                <div class="history-container">
+                    <h3>Historial de Sorteo</h3>
+                    <ul id="lista-historial"></ul>
+                    <button id="clear-history" class="btn-clear">Limpiar Historial</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; color: #ecc94b; margin-top: 40px;">Fixture de Grupos</h2>
+        <section id="fixture-container" class="fixture-grid"></section>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-tag">¡NUEVO ENCUENTRO!</span>
+            <h2 id="ganador-nombre">---</h2>
+            <button id="close-modal" class="btn-primary">Continuar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
